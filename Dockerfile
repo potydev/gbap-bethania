@@ -12,13 +12,9 @@ RUN bun install
 # Copy source code
 COPY . .
 
-# Build arguments for environment variables
-ARG VITE_SUPABASE_URL
-ARG VITE_SUPABASE_ANON_KEY
-
-# Set environment variables for build
-ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
-ENV VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY
+# Set environment variables for build (hardcoded for now)
+ENV VITE_SUPABASE_URL=https://jybhgpsogsnomeeyarzg.supabase.co
+ENV VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5YmhncHNvZ3Nub21lZXlhcnpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0ODExMjksImV4cCI6MjA4NjA1NzEyOX0.BGzvGqI7ScUArKxUUTZtTvt_P7yzQxOCJQaV8ATIwOQ
 
 # Build the application
 RUN bun run build
